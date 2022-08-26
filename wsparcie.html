@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<title>;)</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>;)</title>
+    <link rel="stylesheet" href="stylew.css">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200&display=swap" rel="stylesheet">
+</head>
+    <body>
+        <div class="allnavi">
+            <nav class="nav123">
+            <ul>
+                <li>
+                    <div class="logo">
+                        <h4>
+                            <a href="https://sbmstore.pl/" title="SBMSTORE.PL" target="_blank">
+                                <img src="logo.png" alt="sbmstore.pl">
+                            </a>
+                         </h4>
+                   </div>
+                </li>
+                    <li>
+                        <div class="sbmlabel">
+                            <h3>
+                                <a href="C:\Projekty Programistyczne\SBM LABEL\index.html" title="sbm label" target="_blank">
+                                    <span>SBM LABEL</span>
+                                </a>
+                            </h3>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="akczl">
+                            <h3>
+                                <a href="https://sbmstore.pl/#" title="aktualni czlonkowie" target="_blank">
+                                    <span>AKTUALNI CZLONKOWIE</span>
+                                </a>
+                            </h3>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="byczl">
+                            <h3>
+                                <a href="https://sbmstore.pl/#" title="byli czlonkowie" target="_blank">
+                                    <span>BYLI CZLONKOWIE</span>
+                                </a>
+                            </h3>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="muz">
+                            <h3>
+                                 <a href="https://sbmstore.pl/#" title="muzyka" target="_blank">
+                                    <span>MUZYKA</span>
+                                </a>
+                            </h3>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="wsp">
+                            <h3>
+                                <a href="C:\Projekty Programistyczne\SBM LABEL\wsparcie.html" title="wsparcie" target="_blank">
+                                    <span>WSPARCIE</span>
+                                </a>
+                            </h3>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="kont">
+                            <h3>
+                                <a href="https://sbmstore.pl/#" title="kontakt" target="_blank">
+                                    <span>KONTAKT</span>
+                                </a>
+                            </h3>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="omni">
+                            <h3>
+                                <a href="https://sbmstore.pl/#" title="o mnie" target="_blank">
+                                    <span>O MNIE</span>
+                                </a>
+                            </h3>
+                        </div>
+                </ul>
+            </nav>
+            <div class="navi"></div>
+        </div>
+        <div class="paypal-button">
+            <div id="smart-button-container">
+                <div style="text-align: center;">
+                  <div id="paypal-button-container"></div>
+                </div>
+              </div>
+            <script src="https://www.paypal.com/sdk/js?client-id=Aey9tP5PdHLbqA6UHBtrNdD7n1hW_P8iJqTgnoiQS-uH7I0M2kVR0TnOb4hNqbtlZWyw4TGh2P2nFQib&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+            <script>
+              function initPayPalButton() {
+                paypal.Buttons({
+                  style: {
+                    shape: 'rect',
+                    color: 'black',
+                    layout: 'horizontal',
+                    label: 'donate',
+                    tagline: false
+                  },
+          
+                  createOrder: function(data, actions) {
+                    return actions.order.create({
+                      purchase_units: [{"amount":{"currency_code":"USD","value":5,"breakdown":{"item_total":{"currency_code":"USD","value":5}}},"items":[{"name":"item name","unit_amount":{"currency_code":"USD","value":5},"quantity":"1","category":"DONATION"}]}]
+                    });
+                  },
+          
+                  onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(orderData) {
+                      
+                      // Full available details
+                      console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+          
+                      // Show a success message within this page, e.g.
+                      const element = document.getElementById('paypal-button-container');
+                      element.innerHTML = '';
+                      element.innerHTML = '<h3>Thank you for your payment!</h3>';
+          
+                      // Or go to another URL:  actions.redirect('thank_you.html');
+                      
+                    });
+                  },
+          
+                  onError: function(err) {
+                    console.log(err);
+                  }
+                }).render('#paypal-button-container');
+              }
+              initPayPalButton();
+            </script>
+        </div>
+    </body>
+</html>
